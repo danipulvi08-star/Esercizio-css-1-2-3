@@ -1,0 +1,125 @@
+/* Variabili: se vuoi cambiare un colore, lo cambi solo qui */
+:root {
+    --giallo: #ffe600;
+    --viola-chiaro: #c77dff;
+    --sfondo-card: rgba(0, 0, 0, 0.75);
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: cornflowerblue;
+    background-image: url('./media/channels4_profile.jpg');
+    background-size: 200px;           /* tessere piccole del mosaico */
+}
+
+/* ---------- HEADER E MENU ---------- */
+header {
+    display: flex;
+    justify-content: space-between;   /* logo a sinistra, menu a destra */
+    align-items: center;
+    padding: 10px 40px;
+    background-color: white;
+}
+
+header img {
+    height: 45px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;                 /* toglie i pallini */
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: #111;
+    text-decoration: none;            /* toglie la sottolineatura */
+}
+
+nav a:hover {
+    color: #7b2cbf;
+}
+
+/* ---------- LAYOUT PRINCIPALE ---------- */
+main {
+    display: flex;
+    justify-content: space-between;   /* articoli a sinistra, aside a destra */
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 30px auto;                /* auto = centrato nella pagina */
+    padding: 0 20px;
+}
+
+section {
+    width: 68%;
+}
+
+aside {
+    width: 28%;
+}
+
+/* ---------- TESTI ---------- */
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--viola-chiaro);
+    font-size: 22px;
+}
+
+p {
+    color: bisque;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ---------- ARTICOLI ---------- */
+article {
+    background-color: var(--sfondo-card);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border-bottom: 4px solid var(--giallo);
+}
+
+article:hover {
+    background-color: #2b2b5c;        /* hover: cambia lo sfondo */
+}
+
+article img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;                /* ritaglia senza deformare */
+    border-radius: 8px;
+}
+
+aside img {
+    height: 150px;
+}
+
+/* ---------- RESPONSIVE (sempre in fondo) ---------- */
+@media screen and (max-width: 800px) {
+    header,
+    main {
+        flex-direction: column;
+    }
+
+    section,
+    aside {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
