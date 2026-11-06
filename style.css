@@ -1,4 +1,4 @@
-/* Variabili: se vuoi cambiare un colore, lo cambi solo qui */
+/* variabili */
 :root {
     --giallo: #ffe600;
     --viola-chiaro: #c77dff;
@@ -10,13 +10,13 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: cornflowerblue;
     background-image: url('./media/channels4_profile.jpg');
-    background-size: 200px;           /* tessere piccole del mosaico */
+    background-size: 200px;
 }
 
-/* ---------- HEADER E MENU ---------- */
+/* header */
 header {
     display: flex;
-    justify-content: space-between;   /* logo a sinistra, menu a destra */
+    justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
     background-color: white;
@@ -26,9 +26,10 @@ header img {
     height: 45px;
 }
 
+/* navbar: voci in riga con flex sul padre (ul) */
 nav ul {
     display: flex;
-    list-style: none;                 /* toglie i pallini */
+    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -39,32 +40,42 @@ nav li {
 
 nav a {
     color: #111;
-    text-decoration: none;            /* toglie la sottolineatura */
+    text-decoration: none;
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
 }
 
+/* hover navbar: border-bottom */
 nav a:hover {
     color: #7b2cbf;
+    border-bottom: 3px solid #7b2cbf;
 }
 
-/* ---------- LAYOUT PRINCIPALE ---------- */
+/* layout: section e aside affiancati */
 main {
     display: flex;
-    justify-content: space-between;   /* articoli a sinistra, aside a destra */
+    justify-content: space-between;
     align-items: flex-start;
     max-width: 1100px;
-    margin: 30px auto;                /* auto = centrato nella pagina */
+    margin: 30px auto;
     padding: 0 20px;
 }
 
 section {
-    width: 68%;
+    width: 60%;
 }
 
+/* aside giallo */
 aside {
-    width: 28%;
+    width: 35%;
+    box-sizing: border-box;
+    background-color: #fff3a0;
+    padding: 20px;
+    border-radius: 12px;
 }
 
-/* ---------- TESTI ---------- */
+/* testi */
 h1 {
     font-family: 'Playfair Display', serif;
     color: white;
@@ -76,13 +87,18 @@ h2 {
     font-size: 22px;
 }
 
+aside > h2 {
+    color: #4b0082;
+    margin-top: 0;
+}
+
 p {
     color: bisque;
     font-size: 16px;
     line-height: 1.6;
 }
 
-/* ---------- ARTICOLI ---------- */
+/* articoli */
 article {
     background-color: var(--sfondo-card);
     padding: 20px;
@@ -92,21 +108,24 @@ article {
 }
 
 article:hover {
-    background-color: #2b2b5c;        /* hover: cambia lo sfondo */
+    background-color: #2b2b5c;
 }
 
 article img {
     width: 100%;
     height: 220px;
-    object-fit: cover;                /* ritaglia senza deformare */
+    object-fit: cover;
     border-radius: 8px;
 }
 
+/* immagini aside: width 300px */
 aside img {
+    width: 300px;
+    max-width: 100%;
     height: 150px;
 }
 
-/* ---------- RESPONSIVE (sempre in fondo) ---------- */
+/* responsive */
 @media screen and (max-width: 800px) {
     header,
     main {
@@ -116,6 +135,10 @@ aside img {
     section,
     aside {
         width: 100%;
+    }
+
+    aside {
+        margin-top: 20px;
     }
 
     nav ul {
