@@ -125,13 +125,25 @@ aside img {
     height: 150px;
 }
 
-/* responsive */
+/* selfwork 3: icona "torna su" fissa in basso a destra, sempre in primo piano */
+.torna-su {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    z-index: 1000;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* responsive: sempre in fondo al file */
 @media screen and (max-width: 800px) {
     header,
     main {
         flex-direction: column;
     }
 
+    /* articoli e aside uno sotto l'altro */
     section,
     aside {
         width: 100%;
@@ -141,8 +153,21 @@ aside img {
         margin-top: 20px;
     }
 
+    /* logo e link più piccoli */
+    header img {
+        height: 30px;
+    }
+
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    nav li {
+        margin-left: 10px;
+    }
+
+    nav a {
+        font-size: 12px;
     }
 }
